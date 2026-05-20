@@ -1,0 +1,18 @@
+Projet 1 : Gestion des Questionnaires
+I) TABLES MANIPULEES PAR L’APPLICATION :
+ETUDIANT(num_etudiant : string, Nom : String, Prénoms : string, Niveau : string,
+adr_email :string)
+NB : Le niveau est une liste de choix (L1, L2, L3, M1, M2)
+QCM(num_quest : int, question : string, reponse1 : string, reponse2 : string, reponse3 : string,
+reponse4 : string), l’une de ces réponses est la bonne
+EXAMEN(num_exam, num_etudiant, , Annee_univ : string, note : integer) ;
+// NB : l’année universitaire est de format 2022-2023
+II) TRAITEMENTS :
+ Création, Listage et Mise à jour des tables Etudiant et QCM (CRUD) (6pts)
+ Recherche d’étudiant par son numéro ou son nom en utilisant « LIKE » (1pt)
+ Afficher la liste des étudiants inscrits par niveau avec l’effectif total (3pts)
+ Un étudiant passe un examen des questionnaires et l’application prend par hasard 10
+questions dans la table QCM. Une note sur 10 à ajouter dans la table examen (5pts)
+ Envoyer automatiquement le note de l’étudiant par son email (2pts)
+ Liste des notes des étudiants (1pt)
+ Classement des étudiants par ordre de mérite

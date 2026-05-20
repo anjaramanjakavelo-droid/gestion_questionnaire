@@ -1,0 +1,353 @@
+/* ============================================================
+   FORMS.CSS — Login, Register, Formulaires
+   ============================================================ */
+
+/* ─── Page Login ─── */
+.login-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4361ee 0%, #7c3aed 60%, #06d6a0 100%);
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: -200px;
+  width: 500px; height: 500px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.login-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: -150px; right: -150px;
+  width: 400px; height: 400px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Particules décoratives */
+.login-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.15;
+  filter: blur(40px);
+}
+
+.login-orb-1 {
+  width: 300px; height: 300px;
+  background: #06d6a0;
+  top: 10%; right: 15%;
+}
+
+.login-orb-2 {
+  width: 200px; height: 200px;
+  background: #fde68a;
+  bottom: 20%; left: 10%;
+}
+
+/* Page Register - Orbes décoratifs */
+.register-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.15;
+  filter: blur(40px);
+}
+
+.register-orb-1 {
+  width: 300px; height: 300px;
+  background: #06d6a0;
+  top: 10%; right: 15%;
+}
+
+.register-orb-2 {
+  width: 200px; height: 200px;
+  background: #fde68a;
+  bottom: 20%; left: 10%;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.login-card {
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 1.5rem;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.25);
+  backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.95);
+  overflow: hidden;
+}
+
+html[data-theme="dark"] .login-card {
+  background: rgba(22,27,39,0.95);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.login-card-header {
+  padding: 2rem 2rem 1rem;
+  text-align: center;
+}
+
+.login-logo-wrap {
+  width: 72px; height: 72px;
+  background: var(--app-gradient);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 auto 1.25rem;
+  box-shadow: 0 8px 24px rgba(67,97,238,0.35);
+  animation: pulse-soft 3s infinite;
+}
+
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--app-text);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.03em;
+}
+
+.login-subtitle {
+  font-size: 0.875rem;
+  color: var(--app-muted);
+  font-weight: 500;
+}
+
+.login-card-body { padding: 1.5rem 2rem 2rem; }
+
+/* ─── Input Group stylisé ─── */
+.input-group-modern {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.input-group-modern .input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--app-muted);
+  font-size: 1rem;
+  z-index: 5;
+  pointer-events: none;
+  transition: color 0.2s ease;
+}
+
+.input-group-modern .form-control {
+  padding-left: 2.75rem;
+  border-radius: 0.75rem;
+  border: 1.5px solid var(--app-border);
+  background: var(--app-surface);
+  font-size: 0.9rem;
+  height: 48px;
+}
+
+.input-group-modern .form-control:focus {
+  border-color: var(--app-primary);
+  box-shadow: 0 0 0 3px rgba(67,97,238,0.15);
+}
+
+.input-group-modern:focus-within .input-icon {
+  color: var(--app-primary);
+}
+
+html[data-theme="dark"] .input-group-modern .form-control {
+  background: var(--app-surface-2);
+  color: var(--app-text);
+}
+
+/* ─── Bouton Login ─── */
+.btn-login {
+  width: 100%;
+  height: 48px;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  background: var(--app-gradient);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 16px rgba(67,97,238,0.3);
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(67,97,238,0.45);
+  color: #fff;
+}
+
+.btn-login:active { transform: translateY(0); }
+
+/* ─── Bouton Register ─── */
+.btn-register {
+  width: 100%;
+  height: 44px;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid var(--app-primary);
+  background: transparent;
+  color: var(--app-primary);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-register:hover {
+  background: var(--app-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(67,97,238,0.3);
+}
+
+/* ─── Messages Login ─── */
+.login-alert {
+  border-radius: 0.75rem;
+  border: none;
+  border-left: 4px solid;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.login-alert-error {
+  background: rgba(239,68,68,0.08);
+  border-left-color: #ef4444;
+  color: #991b1b;
+}
+
+html[data-theme="dark"] .login-alert-error {
+  background: rgba(239,68,68,0.15);
+  color: #fca5a5;
+}
+
+.login-alert-success {
+  background: rgba(16,185,129,0.08);
+  border-left-color: #10b981;
+  color: #065f46;
+}
+
+html[data-theme="dark"] .login-alert-success {
+  background: rgba(16,185,129,0.15);
+  color: #6ee7b7;
+}
+
+.login-alert-info {
+  background: rgba(67,97,238,0.08);
+  border-left-color: #4361ee;
+  color: #1d4ed8;
+}
+
+html[data-theme="dark"] .login-alert-info {
+  background: rgba(108,132,245,0.15);
+  color: #93c5fd;
+}
+
+/* ─── Divider texte ─── */
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--app-muted);
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 1.25rem 0;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--app-border);
+}
+
+/* ─── Register page ─── */
+.register-wrapper {
+  min-height: 100vh;
+  background: var(--app-bg);
+  background-image: var(--app-bg-pattern);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.register-card {
+  background: var(--app-surface);
+  border: 1px solid var(--app-border);
+  border-radius: 1.25rem;
+  box-shadow: var(--app-shadow-lg);
+  width: 100%;
+  max-width: 560px;
+  overflow: hidden;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.register-header {
+  padding: 1.75rem 2rem 1.25rem;
+  background: var(--app-gradient);
+  color: #fff;
+  text-align: center;
+}
+
+.register-header h1 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.register-header p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0;
+}
+
+.register-body { padding: 2rem; }
+
+/* ─── Formulaires modaux ─── */
+.modal-form-group {
+  margin-bottom: 1rem;
+}
+
+.modal-form-group .form-label {
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--app-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}

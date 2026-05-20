@@ -1,0 +1,50 @@
+
+CREATE DATABASE examen;
+
+-- =========================
+-- TABLE ETUDIANT
+-- =========================
+CREATE TABLE etudiant (
+num_etudiant VARCHAR(20) PRIMARY KEY,
+nom VARCHAR(50),
+prenoms VARCHAR(50),
+niveau ENUM('L1','L2','L3','M1','M2'),
+adr_email VARCHAR(100)
+);
+
+-- =========================
+-- TABLE QCM
+-- =========================
+CREATE TABLE qcm (
+num_quest INT AUTO_INCREMENT PRIMARY KEY,
+question TEXT,
+reponse1 TEXT,
+reponse2 TEXT,
+reponse3 TEXT,
+reponse4 TEXT,
+bonne_reponse INT
+);
+
+-- =========================
+-- TABLE EXAMEN
+-- =========================
+CREATE TABLE examen (
+num_exam INT AUTO_INCREMENT PRIMARY KEY,
+num_etudiant VARCHAR(20),
+annee_univ VARCHAR(9),
+note INT,
+FOREIGN KEY (num_etudiant) REFERENCES etudiant(num_etudiant)
+ON DELETE CASCADE
+ON UPDATE CASCADE
+);
+
+-- =========================
+-- TABLE UTILISATEUR
+-- =========================
+CREATE TABLE utilisateur (
+    id_user INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    mot_de_passe VARCHAR(255) NOT NULL,
+    role ENUM('ADMIN', 'ETUDIANT') NOT NULL,
+    email VARCHAR(100)
+);
